@@ -2,7 +2,6 @@
 NP-Complete
 
 Related problems:
-- https://aonecode.com/amazon-interview-questions/find-critical-nodes
 - https://leetcode.com/problems/binary-tree-cameras/
 
 Greedy approach are do not always yield the optimal result:

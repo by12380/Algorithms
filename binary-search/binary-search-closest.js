@@ -3,8 +3,8 @@
 Otherwise index of number closest but smaller than target.
 
 p.s. When no target found, left index becomes greater than right index by 1;
-therefore, left index points to the closest number to target on its right
-and right index points to closest number to target on its left.
+therefore, left index points to the number closest to but larger than target,
+and right index points to the number closest to but smaller than target.
 
 Hence returning left - 1 when left > 0.
 If target is less than the smallest value in array,

@@ -103,6 +103,10 @@ const binarySearch = (arr, target) => {
 ---
 
 ## Binary search (find first or last occurance)
+
+Related problems:
+ - https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+
 ```js
 // ./binary-search-first-or-last-occurance.js
 

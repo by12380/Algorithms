@@ -40,7 +40,7 @@ class UnionFind {
 }
 ```
 
-### Optimized version:
+### Optimized version (Union find by rank):
 ```js
 // ./union-find-by-rank.js
 
@@ -85,4 +85,18 @@ class UnionFind {
     return this.find(a) === this.find(b);
   }
 }
+```
+
+### Optimized version (Union find by rank + path compression):
+```diff
+// Time - find: O(α(n)), union: O(α(n))
+
+  // Returns final parent of a node
+  find(a) {
+    while (this.parent[a] !== a) {
++     this.parent[a] = this.parent[this.parent[a]] // Skip one level
+      a = this.parent[a];
+    }
+    return a;
+  }
 ```

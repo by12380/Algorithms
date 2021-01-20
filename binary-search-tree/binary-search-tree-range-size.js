@@ -64,7 +64,7 @@ class BST {
 
     if (node.val === val) {
       return node
-    } else if (val < node) {
+    } else if (val < node.val) {
       return this._find(val, node.left)
     } else {
       return this._find(val, node.right)

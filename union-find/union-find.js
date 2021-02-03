@@ -9,9 +9,17 @@ class UnionFind {
     elements.forEach(e => (this.parent[e] = e));
   }
 
+  add(e) {
+    if (e in this.parent) return;
+
+    this.parent[e] = e
+  }
+
   union(a, b) {
     let rootA = this.find(a);
     let rootB = this.find(b);
+
+    if (rootA === rootB) return;
 
     this.parent[rootA] = rootB
   }

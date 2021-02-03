@@ -13,9 +13,18 @@ class UnionFind {
     elements.forEach(e => (this.rank[e] = 1));
   }
 
+  add(e) {
+    if (e in this.parent) return;
+
+    this.parent[e] = e
+    this.rank[e] = 1
+  }
+
   union(a, b) {
     let rootA = this.find(a);
     let rootB = this.find(b);
+
+    if (rootA === rootB) return;
 
     if (this.rank[rootA] > this.rank[rootB]) {
       this.parent[rootB] = rootA

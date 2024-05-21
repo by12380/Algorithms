@@ -27,5 +27,10 @@ const binarySearch = (arr, target) => {
     }
   }
 
-  return left > 0 ? left - 1 : left
+  /*
+    If no target found:
+    1. `left` points to closest but larger than target
+    2. `right` points to closest but smaller than target
+  */
+  return [right, left]
 }

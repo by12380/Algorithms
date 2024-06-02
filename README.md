@@ -43,3 +43,82 @@ Parent index = i // 2
 left child index = i * 2
 right child index = i * 2
 ```
+
+### DFS base case position
+- Base cases and either be placed at:
+    1. Start of function:
+    ```
+    From boggle board problem
+
+        def dfs(i, j, curr):
+            # Start of function
+            if '*' in curr:
+                results.add(curr['*'])
+            if i < 0 or i >= gv['m'] or j < 0 or j >= gv['n']:
+                return
+            if (i, j) in visited:
+                return
+
+
+            char = board[i][j]
+
+            if char not in curr:
+                return
+
+            visited.add((i, j))
+
+            dfs(i - 1, j - 1, curr[char])
+            dfs(i - 1, j, curr[char])
+            dfs(i - 1, j + 1, curr[char])
+            dfs(i, j - 1, curr[char])
+            dfs(i, j + 1, curr[char])
+            dfs(i + 1, j - 1, curr[char])
+            dfs(i + 1, j, curr[char])
+            dfs(i + 1, j + 1, curr[char])
+
+            visited.remove((i, j))
+    ```
+
+    2. Right before recursive call:
+    ```
+    From boggle board problem
+
+        def dfs(i, j, curr):
+
+            char = board[i][j]
+
+            if char not in curr:
+                return
+
+            visited.add((i, j))
+
+            # Right before recursive call
+            # Had to use for loop for convienice
+
+            curr = curr[char]
+
+            if '*' in curr:
+                results.add(curr['*'])
+
+            neighbors = [
+                [i - 1, j - 1],
+                [i - 1, j],
+                [i - 1, j + 1],
+                [i, j - 1],
+                [i, j + 1],
+                [i + 1, j - 1],
+                [i + 1, j],
+                [i + 1, j + 1],
+            ]
+
+            for x, y in neighbors:
+                if x < 0 or x >= gv['m'] or y < 0 or y >= gv['n']:
+                    continue
+                if (x, y) in visited:
+                    continue
+                dfs(x, y, curr)
+
+            visited.remove((i, j))
+    ```
+
+    ** Since calling right before the recursive call is equivalent to calling the same code right after stepping in to the function.

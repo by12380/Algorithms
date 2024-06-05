@@ -122,3 +122,25 @@ right child index = i * 2
     ```
 
     ** Since calling right before the recursive call is equivalent to calling the same code right after stepping in to the function.
+
+# Personal Brush Ups
+
+- Binary tree traversal with backtracking:
+    https://leetcode.com/problems/find-distance-in-a-binary-tree
+
+- DFS and Trie:
+    https://leetcode.com/problems/word-search-ii/ (Blind 75) or [Boggle Board](https://www.algoexpert.io/questions/boggle-board) from AlgoExpert
+
+- BFS:
+    https://leetcode.com/problems/rotting-oranges (with multi-source)
+    https://leetcode.com/problems/the-maze (skip steps)
+
+- DP and Recursion w/ memo:
+    https://leetcode.com/problems/longest-common-subsequence/ (Blind 75)
+    https://www.algoexpert.io/questions/knapsack-problem
+
+- Topological sort:
+    https://leetcode.com/problems/alien-dictionary/ (Blind 75)
+
+- Partitioning:
+    https://www.algoexpert.io/questions/quickselect
